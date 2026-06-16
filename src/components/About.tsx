@@ -29,7 +29,7 @@ export default function About() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <img
-                src="public/images/c4df2d_e3e13f8dd06a4b9a8bbc1fcf3ea18f97~mv2.jpg"
+                src="/images/c4df2d_e3e13f8dd06a4b9a8bbc1fcf3ea18f97~mv2.jpg"
                 alt="Construction craftsmanship - Setanta Restoration"
                 className="w-full h-full object-cover"
                 loading="lazy"
