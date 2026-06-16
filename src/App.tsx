@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="bg-black text-white min-h-screen">
       <Navbar />
-      <main>
+      <main className="pt-20 sm:pt-24 lg:pt-0">
         <Hero />
         <Overview />
         <About />

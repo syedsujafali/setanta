@@ -33,7 +33,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="#home" className="flex items-center gap-3 group">
-              <div className="relative w-56 h-28 flex items-center justify-center">
+              <div className="relative w-32 h-16 sm:w-40 h-20 lg:w-56 h-28 flex items-center justify-center">
                 <img
                   src="/images/logo.jpeg"
                   alt="Setanta Restoration Inc. Logo"
