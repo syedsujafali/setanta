@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { Phone, Mail, ChevronDown, ArrowRight} from 'lucide-react';
+import { Phone, Mail, ArrowRight} from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[82vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -23,7 +23,7 @@ export default function Hero() {
       }} />
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-40 sm:pt-44 lg:pt-48 pb-16">
         <div className="max-w-4xl">
           {/* Badge */}
           <motion.div
@@ -41,7 +41,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             General Contractors Serving{' '}
@@ -118,15 +118,7 @@ export default function Hero() {
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
-        <a href="#about" className="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
-            <ChevronDown className="w-5 h-5" />
-          </motion.div>
-        </a>
+        
       </motion.div>
     </section>
   );

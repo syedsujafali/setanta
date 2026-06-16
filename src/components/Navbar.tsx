@@ -27,10 +27,10 @@ export default function Navbar() {
         }`}
       >
         <div className="w-full max-w-full px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <a href="#home" className="flex items-center gap-3 group flex-shrink-0">
-              <div className="relative w-24 h-12 sm:w-32 sm:h-16 md:w-40 md:h-20 lg:w-80 lg:h-28 flex items-center justify-center">
+              <div className="relative w-24 h-12 sm:w-32 sm:h-16 md:w-48 md:h-20 lg:w-[30rem] lg:h-32 flex items-center justify-center">
                 <img
                   src="/images/logo.jpeg"
                   alt="Setanta Restoration Inc. Logo"
@@ -39,26 +39,19 @@ export default function Navbar() {
               </div>
             </a>
 
-            {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 relative group"
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C00000] group-hover:w-full transition-all duration-300" />
-                </a>
-              ))}
-            </div>
-
-            {/* Contact Info Desktop */}
-            <div className="hidden xl:flex items-center gap-6">
-              <a href="tel:9149638107" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors">
-                <Phone className="w-4 h-4 text-[#C00000]" />
-                (914) 963-8107
-              </a>
+            <div className="hidden lg:flex items-center gap-8 ml-auto">
+              <div className="flex items-center gap-8">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 relative group"
+                  >
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C00000] group-hover:w-full transition-all duration-300" />
+                  </a>
+                ))}
+              </div>
               <a
                 href="#contact"
                 className="px-5 py-2.5 bg-[#C00000] hover:bg-[#990000] text-white text-sm font-semibold rounded-sm transition-all duration-300 hover:shadow-lg hover:shadow-red-900/30"
