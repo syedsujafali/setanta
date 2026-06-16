@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 
 const navLinks = [
@@ -21,26 +21,22 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 w-screen transition-all duration-500 ${
           scrolled ? 'glass py-3' : 'bg-transparent py-5'
         }`}
       >
-        <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-full px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-3 group">
-              <div className="relative w-32 h-16 sm:w-40 h-20 lg:w-56 h-28 flex items-center justify-center">
+            <a href="#home" className="flex items-center gap-3 group flex-shrink-0">
+              <div className="relative w-24 h-12 sm:w-32 h-16 md:w-40 h-20 lg:w-56 h-28 flex items-center justify-center">
                 <img
                   src="/images/logo.jpeg"
                   alt="Setanta Restoration Inc. Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
-              
             </a>
 
             {/* Desktop Nav */}
@@ -74,14 +70,14 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-white"
+              className="lg:hidden p-2 text-white flex-shrink-0"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -91,9 +87,9 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[#0a0a0a] lg:hidden pt-24"
+            className="fixed inset-0 z-40 bg-[#0a0a0a] lg:hidden pt-24 overflow-y-auto"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8 px-8">
+            <div className="flex flex-col items-center justify-center min-h-full gap-8 px-8 py-8">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
